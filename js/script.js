@@ -16,5 +16,5 @@ for (let i = 0; i < pokemonList.length; i++) {
     } else {
         document.write(pokemonListName + ' (height : ' + pokemonListHeight + ')'); 
     }
-  
+    document.write('<br>', '<br>');
   }
