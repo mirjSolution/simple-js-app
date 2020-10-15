@@ -1,0 +1,22 @@
+.pokemon-list {
+  padding: 0;
+  list-style: none;
+}
+
+.pokemon-button {
+  margin: 5px 0;
+  background-color: #f39c12;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.pokemon-button:hover {
+  background: #fff;
+  box-shadow: 0px 2px 10px 5px #97b1bf;
+  color: #000;
+}
