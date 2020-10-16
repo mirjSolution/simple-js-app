@@ -77,9 +77,6 @@ let pokemonRepository = (function () {
     };
   })();
 
-  // Add pokemon on array
-//   pokemonRepository.add({ name: 'Pikachu', height: 5, types:['electric', 'galvanic'] });
-
   // Loop to the array and display
   pokemonRepository.loadList().then(function() {
     // Now the data is loaded!
