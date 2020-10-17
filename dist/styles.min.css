@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css2?family=Exo+2&display=swap);
+body {
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+.pokemon-list {
+  padding: 0;
+  list-style: none;
+}
+input {
+  outline: 0;
+}
+button,
+h1,
+h2,
+li,
+ul {
+  text-transform: capitalize;
+}
