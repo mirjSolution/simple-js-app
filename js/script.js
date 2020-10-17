@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
           let pokemonType = document.querySelector('.list-group');           
           pokemonType.innerHTML = ''   
           pokemonType.textContent = 'Types'
-          document.querySelector('#modal-button').removeAttribute('disabled');
+          document.querySelector('#modal-button').style.display = 'block';
           pokemon.types.map(pokemon => {      
             let pokemonType = document.querySelector('.list-group');
             let pokemonTypeList = document.createElement('li');   
@@ -139,6 +139,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
