@@ -21,7 +21,6 @@ let pokemonRepository = (function () {
     // Function to log details of pokemon to console
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            console.log(pokemon);
             document.querySelector('.card-title').textContent = pokemon.name
             document.querySelector('.card-title').style.textTransform = 'capitalize';
             document.querySelector('.card-text').textContent = 'Height: ' + pokemon.height           
