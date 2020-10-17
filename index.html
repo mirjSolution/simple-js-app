@@ -23,17 +23,17 @@
     
     
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel"></h2>
+            <h2 class="modal-title" id="exampleModalLabel">Title</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <img class="col-md-12 pokemon-image" alt="Pokemon Image">
+            <img class="col-md-12 pokemon-image" alt="Pokemon Image" src='img/loading.gif'>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
@@ -59,7 +59,7 @@
               <li class="list-group-item bg-secondary text-white">Types</li>
             </ul>
             <!-- Button trigger modal -->
-            <button type="button" id="modal-button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" disabled>
+            <button type="button" id="modal-button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" style="display: none;">
               VIEW IMAGE
             </button> 
           </div>
