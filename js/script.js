@@ -33,7 +33,7 @@ let pokemonRepository = (function () {
               pokemonTypeList.textContent = pokemon.type.name;
               pokemonType.append(pokemonTypeList);
             })
-            showImage(pokemon.imageUrl);
+            showModal(pokemon.imageUrl, pokemon.name);
         });
         
     }
@@ -86,12 +86,13 @@ let pokemonRepository = (function () {
     }
 
     // Function show image on the modal
-    function showImage(imageUrl) {
+    function showModal(imageUrl, name) {
       let modalButton = document.querySelector('#modal-button');   
       modalButton.addEventListener('click', (e) => {
         let img = document.querySelector('.pokemon-image');
         img.src = imageUrl;    
       });
+      document.querySelector('.modal-title').textContent = name
     }
 
     return {
