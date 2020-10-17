@@ -1,8 +1,11 @@
 // IIFE
 let pokemonRepository = (function () {
+    // Hide loader
+    document.getElementById('loading').style.display = 'none';
+
     // array of objects
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=10?w=500&h=500';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=14';
 
     // Function to add pokemon
     function add(pokemon) {
@@ -55,6 +58,8 @@ let pokemonRepository = (function () {
 
     // Function to load pokemon list using fetch
     function loadList() {
+        document.getElementById('loading').style.display = 'block';
+        document.querySelector('.card-pokemon-details').style.display = 'none';
         return fetch(apiUrl).then(function (response) {
           return response.json();
         }).then(function (json) {
@@ -64,8 +69,13 @@ let pokemonRepository = (function () {
               detailsUrl: item.url
             };
             add(pokemon);
+            document.getElementById('loading').style.display = 'none';
+            document.querySelector('.card-pokemon-details').style.display = 'block';
           });
         }).catch(function (e) {
+          // Hide loader
+          document.querySelector('#loading').style.display = 'block';
+          document.querySelector('.card-pokemon-details').style.display = 'none';
           console.error(e);
         })
       }
