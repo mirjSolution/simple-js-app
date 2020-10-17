@@ -58,6 +58,7 @@ let pokemonRepository = (function () {
 
     // Function to load pokemon list using fetch
     function loadList() {
+        // Show loader when fetching data
         document.getElementById('loading').style.display = 'block';
         document.querySelector('.card-pokemon-details').style.display = 'none';
         return fetch(apiUrl).then(function (response) {
@@ -69,11 +70,12 @@ let pokemonRepository = (function () {
               detailsUrl: item.url
             };
             add(pokemon);
+            // Hide loader after fetching data
             document.getElementById('loading').style.display = 'none';
             document.querySelector('.card-pokemon-details').style.display = 'block';
           });
         }).catch(function (e) {
-          // Hide loader
+          // Show loader when theres an error
           document.querySelector('#loading').style.display = 'block';
           document.querySelector('.card-pokemon-details').style.display = 'none';
           console.error(e);
