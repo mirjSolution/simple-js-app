@@ -1,5 +1,6 @@
 // IIFE
 let pokemonRepository = (function () {
+
     // Hide loader
     document.getElementById('loading').style.display = 'none';
 
@@ -52,6 +53,7 @@ let pokemonRepository = (function () {
         button.addEventListener('click', function() {
             showDetails(pokemon)    
         })
+        listPokemon.className = 'pokemon-list-items'
         listPokemon.append(button);
         pokemonList.append(listPokemon);
     }
@@ -107,12 +109,27 @@ let pokemonRepository = (function () {
       document.querySelector('.modal-title').textContent = name
     }
 
+    // Function to search pokemon 
+    const search = document.querySelector('.search-pokemon');
+    search.addEventListener('keyup', searchPokemon);
+
+    function searchPokemon(e) {
+      const text = e.target.value.toLowerCase();
+      
+      document.querySelectorAll('.pokemon-list-items').forEach(function(pokemon){
+        const item = pokemon.firstChild.textContent;
+        if(item.toLowerCase().indexOf(text) != -1){
+          pokemon.style.display = 'block';
+        } else {
+          pokemon.style.display = 'none';
+        }
+      });
+    }
+
     return {
-        add: add,
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails,
     };
   })();
 
