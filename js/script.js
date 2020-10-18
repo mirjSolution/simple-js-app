@@ -37,8 +37,7 @@ let pokemonRepository = (function () {
             pokemonType.append(pokemonTypeList);
           })
           showModal(pokemon.imageUrl, pokemon.name);
-      });
-      
+      });      
   }
 
   // Function to create button and display it on the screen
@@ -113,8 +112,7 @@ let pokemonRepository = (function () {
   search.addEventListener('keyup', searchPokemon);
 
   function searchPokemon(e) {
-    const text = e.target.value.toLowerCase();
-    
+    const text = e.target.value.toLowerCase();    
     document.querySelectorAll('.pokemon-list-items').forEach(function(pokemon){
       const item = pokemon.firstChild.textContent;
       if(item.toLowerCase().indexOf(text) != -1){
@@ -125,20 +123,26 @@ let pokemonRepository = (function () {
     });
   }
 
+  // Function to load pokemon when user press x button on search
+  const searchButtonClick = document.querySelector('.search-pokemon');
+  searchButtonClick.addEventListener('search', getAllPokemon);
+
+  function getAllPokemon() {
+    // Loop to the array and display
+      pokemonRepository.loadList().then(function() {
+      // Now the data is loaded!
+        pokemonRepository.getAll().forEach(function(pokemon){
+        pokemonRepository.addListItem(pokemon);
+      });
+    });
+  }
+
   return {
       getAll: getAll,
       addListItem: addListItem,
       loadList: loadList,
+      getAllPokemon: getAllPokemon
   };
 })();
 
-// Loop to the array and display
-pokemonRepository.loadList().then(function() {
-  // Now the data is loaded!
-  pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
-  });
-});
-
-
-
+pokemonRepository.getAllPokemon()
