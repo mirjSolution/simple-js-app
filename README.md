@@ -16,7 +16,7 @@ Small web application with HTML, CSS, and JavaScript that loads data from an ext
 
   ## Demo
 
-The APP is live, just open the link and scan the QR Code to use it (https://mirjsolution.github.io/simple-js-app/)
+The APP is live (https://mirjsolution.github.io/simple-js-app/)
 
 - Version: 1.0.0
 - License: MIT
