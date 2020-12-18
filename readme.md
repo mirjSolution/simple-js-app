@@ -13,7 +13,7 @@ Small web application with HTML, CSS, and JavaScript that loads data from an ext
 
   ## API used in this Project
 
-  -
+  - https://pokeapi.co
 
   ## Demo
 
