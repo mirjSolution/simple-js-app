@@ -6,10 +6,9 @@ Small web application with HTML, CSS, and JavaScript that loads data from an ext
 
 ## Features
 
-- Users can enter their name and choose a background color for the chat screen before joining the chat.
-- Displaying the conversation, as well as an input field and submit button.
-- Provide users with two additional communication features: sending images
-  and location data.
+- Load data from an external source (API)
+- View a list of items
+- On user action (e.g., by clicking on a list item), view details for that item
 
   ## API used in this Project
 
